@@ -72,10 +72,10 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         CardView cardView;
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
-            avatar = itemView.findViewById(R.id.image_view_book_avatar);
-            price = itemView.findViewById(R.id.text_view_price);
-            title = itemView.findViewById(R.id.text_view_title);
-            cardView = itemView.findViewById(R.id.card_view);
+            avatar = itemView.findViewById(R.id.imageViewBookImg);
+            price = itemView.findViewById(R.id.textviewCost);
+            title = itemView.findViewById(R.id.textviewBookName);
+            cardView = itemView.findViewById(R.id.cardViewBook);
         }
     }
 }

@@ -10,14 +10,15 @@ import com.example.toko_admin.repositories.BookRepository;
 import java.util.List;
 
 public class BookViewModel extends ViewModel {
-
-
     private LiveData<List<BookResponse>> bookResponseLiveData;
     private BookRepository bookRepository;
+    public LiveData<Integer> totalPages;
 
     public BookViewModel() {
         bookRepository = new BookRepository();
         bookResponseLiveData = bookRepository.getBookResponseLiveData();
+        totalPages = bookRepository.getTotalPagesLiveData();
+
     }
     public void getAllBooksByPage(int page) {bookRepository.getAllBooksByPage(page);}
     public LiveData<List<BookResponse>> getBookResponseLiveData() {
@@ -25,11 +26,14 @@ public class BookViewModel extends ViewModel {
     }
     public boolean getMoreBook(int pageNumber)
     {
-        if(pageNumber + 1 < bookRepository.getTotalPages())
-        {
-            this.getAllBooksByPage(pageNumber);
-            return true;
-        }
-        return false;
+        this.getAllBooksByPage(pageNumber);
+        return true;
     }
+
+    public void getAllBookByTitle(String title ,String language, String sort , int pageNumber)
+    {
+        bookRepository.getAllBooksByTitle(title ,language, sort , pageNumber);
+
+    }
+
 }
