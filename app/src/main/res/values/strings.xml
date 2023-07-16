@@ -20,4 +20,6 @@
     <string name="login_instruction">Đăng nhập bằng tài khoản người quản lý</string>
     <string name="username">Tên tài khoản</string>
     <string name="password">Mật khẩu</string>
+    <string name="edit_book">Chỉnh sửa thông tin sách</string>
+    <string name="edit_book_info_toolbar">Chỉnh sửa thông tin sách</string>
 </resources>
