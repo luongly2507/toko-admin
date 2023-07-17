@@ -22,6 +22,7 @@ public class BookRepository {
     {
         bookService = ApiService.getBookService();
         bookResponseLiveData = new MutableLiveData<>();
+        totalPages = new MutableLiveData<>();
     }
 
     public void getAllBooksByPage(int page)
