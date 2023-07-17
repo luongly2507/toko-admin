@@ -45,6 +45,9 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             String price = DecimalFormat.getCurrencyInstance(new Locale("vi" , "VN")).format(bookResponse.getPrice());
             holder.title.setText(bookResponse.getTitle());
             holder.price.setText(price);
+            holder.quantity.setText(String.valueOf(bookResponse.getQuantity()));
+            holder.publishDate.setText(bookResponse.getPublishcationDate());
+
             String imageSource = "";
             for (AlbumResponse i: bookResponse.getAlbums()) {
                 imageSource = i.getImageSource();
@@ -68,13 +71,16 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
 
     public static class BookViewHolder extends RecyclerView.ViewHolder {
         ImageView avatar;
-        TextView price , title;
+        TextView price , title, quantity, publishDate;
+
         CardView cardView;
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
             avatar = itemView.findViewById(R.id.imageViewBookImg);
             price = itemView.findViewById(R.id.textviewCost);
             title = itemView.findViewById(R.id.textviewBookName);
+            quantity = itemView.findViewById(R.id.textviewQuantity);
+            publishDate = itemView.findViewById(R.id.textviewPublishDate);
             cardView = itemView.findViewById(R.id.cardViewBook);
         }
     }
