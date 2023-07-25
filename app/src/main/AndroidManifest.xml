@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".views.activities.AddCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditBookActivity"
             android:exported="false" />
         <activity

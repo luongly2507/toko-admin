@@ -42,21 +42,21 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         BookResponse bookResponse = bookResponseList.get(position);
         if(bookResponse != null)
         {
-            String price = DecimalFormat.getCurrencyInstance(new Locale("vi" , "VN")).format(bookResponse.getPrice());
-            holder.title.setText(bookResponse.getTitle());
-            holder.price.setText(price);
-            String imageSource = "";
-            for (AlbumResponse i: bookResponse.getAlbums()) {
-                imageSource = i.getImageSource();
-                if(i.isPresentation())
-                {
-                    imageSource = i.getImageSource();
-                    break;
-                }
-            }
-            Glide.with(context)
-                    .load(ApiService.SERVICE_BASE_URL + "img/upload/" + imageSource)
-                    .into(holder.avatar);
+//            String price = DecimalFormat.getCurrencyInstance(new Locale("vi" , "VN")).format(bookResponse.getPrice());
+//            holder.title.setText(bookResponse.getTitle());
+//            holder.price.setText(price);
+//            String imageSource = "";
+//            for (AlbumResponse i: bookResponse.getAlbums()) {
+//                imageSource = i.getImageSource();
+//                if(i.isPresentation())
+//                {
+//                    imageSource = i.getImageSource();
+//                    break;
+//                }
+//            }
+//            Glide.with(context)
+//                    .load(ApiService.SERVICE_BASE_URL + "img/upload/" + imageSource)
+//                    .into(holder.avatar);
         }
     }
 
@@ -72,10 +72,10 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         CardView cardView;
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
-            avatar = itemView.findViewById(R.id.image_view_book_avatar);
-            price = itemView.findViewById(R.id.text_view_price);
-            title = itemView.findViewById(R.id.text_view_title);
-            cardView = itemView.findViewById(R.id.card_view);
+//            avatar = itemView.findViewById(R.id.image_view_book_avatar);
+//            price = itemView.findViewById(R.id.text_view_price);
+//            title = itemView.findViewById(R.id.text_view_title);
+//            cardView = itemView.findViewById(R.id.card_view);
         }
     }
 }

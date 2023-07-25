@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="addCategoryViewModel"
+            type="com.example.toko_admin.viewmodels.AddCategoryViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.activities.AddCategoryActivity">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="45dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/button_back_content_description"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/addCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:text="Thêm Danh mục"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toEndOf="@+id/buttonBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/categorySpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="   Chọn danh mục cha: (bỏ trống nếu danh mục cần thêm là danh mục cha)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="10dp"/>
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="15sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-120dp"
+            android:layout_marginEnd="30dp"/>
+        <TextView
+            android:id="@+id/categoryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/categorySpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Tên danh mục:"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
+        <EditText
+            android:id="@+id/categoryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/categoryNameTextView"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:inputType="text"
+            android:lines="1"/>
+        <Button
+            android:id="@+id/addCategoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Thêm Danh mục"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryEditText"
+            android:layout_marginTop="30dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
